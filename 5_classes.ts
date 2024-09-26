@@ -86,7 +86,7 @@
 // по умолчанию у поля автоматом устанавливается public
 //
 class Animal {
-    protected voice: string = '';
+    protected voice: string = 'purrrr';
     public color: string = 'black';
     constructor() {
         this.go()
@@ -98,8 +98,8 @@ class Animal {
 
 class Cat extends Animal {
     public setVoice(voice: string) {
-        this.voice = voice;
         console.log(this.voice, ' ', voice);
+        this.voice = voice;
     }
 }
 
@@ -161,22 +161,22 @@ cat1.setVoice('meow');
 // вот как описывать классовые компоненты и их метод render - ии вернее они так расписаны
 // внутри исходников реакта
 
-abstract class Component {
-    abstract render(): void
-    abstract info(): string
-}
-
-class AppComponent extends Component {
-    render(): void {
-        console.log('Component on render')
-    }
-
-    info(): string {
-        return 'This is info';
-    }
-}
-
-// абстрактные методы в классе-ребенке - это динамические методы созданные в классе-ребенке
-
-AppComponent.prototype.render();
-console.log(AppComponent.prototype.info());
+// abstract class Component {
+//     abstract render(): void
+//     abstract info(): string
+// }
+//
+// class AppComponent extends Component {
+//     render(): void {
+//         console.log('Component on render')
+//     }
+//
+//     info(): string {
+//         return 'This is info';
+//     }
+// }
+//
+// // абстрактные методы в классе-ребенке - это динамические методы созданные в классе-ребенке
+//
+// AppComponent.prototype.render();
+// console.log(AppComponent.prototype.info());

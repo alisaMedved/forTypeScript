@@ -1,11 +1,11 @@
-// interface Rect {
-//     readonly id: string
-//     color?: string
-//     size: {
-//         width: number
-//         height: number
-//     }
-// }
+interface Rect {
+    readonly id: string
+    color?: string
+    size: {
+        width: number
+        height: number
+    }
+}
 //
 // const rect1: Rect = {
 //     id: '123',
@@ -25,19 +25,22 @@
 //
 // // наследование интерфейсов
 //
-// interface RectWithArea extends Rect {
-//     getArea: () => number
-// }
-// const rect6: RectWithArea = {
-//     id: '123',
-//     size: {
-//         width: 12,
-//         height: 78,
-//     },
-//     getArea(): number {
-//         return this.size.width * this.size.height
-//     }
-// };
+interface RectWithArea extends Rect {
+    getArea: () => number,
+
+}
+const rect6: RectWithArea = {
+    id: '123',
+    size: {
+        width: 12,
+        height: 78,
+    },
+    getArea(): number {
+        return this.size.width * this.size.height
+    }
+};
+
+console.log(rect6);
 //
 // // интерфейсы для классов
 //

@@ -1,15 +1,15 @@
 interface Box {
     height: number;
-    width: number;
+    width: string;
 }
 
 interface Box {
     scale: number;
     // выбьет ошибку поля нефункционального типа дожны быть уникальными
-    // width: string;
+    width: number;
 }
-// мердж двух типов произойдет автоматически под капотом
-let box: Box = {height: 5, width: 6, scale: 10};
+// мердж двух типов произойдет автоматически под капотом - выбирается первое объявление
+let box: Box = {height: 5, width: 'hjk', scale: 10};
 
 interface Cloner {
     clone(animal: Animal): Animal;

@@ -2,17 +2,26 @@
 // а вот интерфейс можно
 // ( и это может быть удобно, если нужно расширить интерфейс сторонней библиотеки).
 
-// type Box = {
+type Box = {
+    x: number;
+}
+
+// выбивает ошибку -
+type Box = {
+    y: number;
+}
+
+// interface Box {
 //     x: number;
 // }
 //
-// // выбивает ошибку -
-// type Box = {
+// // не выбивает ошибку -
+// interface Box {
 //     y: number;
 // }
 
 //2) нельзя имплементироваться от типа если используется union
-
+//
 type Shape = {
     v: string;
 }
@@ -25,5 +34,5 @@ type Box = Shape | Figure;
 
 // type Box = Shape;
 class MyBox implements Box {
-    v: string
+    v: string;
 }
